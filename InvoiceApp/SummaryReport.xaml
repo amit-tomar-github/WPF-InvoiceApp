@@ -1,0 +1,40 @@
+﻿<Window x:Class="InvoiceApp.SummaryReport"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InvoiceApp"
+        mc:Ignorable="d"
+        Title="Summary Report" Height="488" Width="783" Style="{DynamicResource MyWin}"  WindowStartupLocation="CenterScreen" BorderBrush="#FF007ACC" BorderThickness="1" Icon="Images/1.png" Loaded="Window_Loaded">
+    <Grid Background="#FF313131">
+        <Label Content="View Summary Report" VerticalAlignment="Top" HorizontalAlignment="Stretch"  Width="Auto"  MouseDown="Label_MouseDown" Foreground="#FFEFF3F7" FontSize="14" BorderBrush="#FF0479DA" BorderThickness="0,0,0,1" HorizontalContentAlignment="Center" Background="#FF034878"/>
+        <Button x:Name="btnClose" Content="X" VerticalAlignment="Top" Margin="743,3,3,0" Height="20" Style="{StaticResource btnPlain}" BorderThickness="0" Click="btnClose_Click"/>
+        <Label x:Name="label" Content="Filter" HorizontalAlignment="Left" Margin="19,34,0,0" VerticalAlignment="Top" Height="26"/>
+        <Label x:Name="label_Copy5" Content="Filter Value" HorizontalAlignment="Left" Margin="241,38,0,0" VerticalAlignment="Top" Height="26"/>
+        <TextBox x:Name="txtFilterValue" HorizontalAlignment="Left" Height="23" Margin="353,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" CharacterCasing="Upper" TabIndex="1"/>
+        <ComboBox x:Name="cmbFilter" HorizontalAlignment="Left" Margin="74,39,0,0" VerticalAlignment="Top" Width="155" TabIndex="4" Height="23"/>
+        <Button x:Name="btnGet" Content="Get" HorizontalAlignment="Left" Margin="538,40,0,0" VerticalAlignment="Top" Width="70" ToolTip="Add Item To List" Height="20" TabIndex="7" Click="btnGet_Click"/>
+        <Button x:Name="btnReset" Content="Reset" HorizontalAlignment="Left" Margin="538,83,0,0" VerticalAlignment="Top" Width="70" ToolTip="Reset" RenderTransformOrigin="-11.545,7.65" Height="20" Click="btnReset_Click"/>
+        <DataGrid x:Name="dg" HorizontalAlignment="Stretch" Margin="10,114,10,10" CanUserResizeRows="False" CanUserAddRows="False" ColumnWidth="Auto"  AutoGenerateColumns="False" IsReadOnly="True" CanUserResizeColumns="False" Background="{x:Null}" VerticalAlignment="Stretch">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding TinNo}" Header="TinNo"/>
+                <DataGridTextColumn Binding="{Binding PanNo}" Header="PanNo"/>
+                <DataGridTextColumn Binding="{Binding BillNo}" Header="BillNo"/>
+                <DataGridTextColumn Binding="{Binding InvoiceDate}" Header="InvoiceDate"/>
+                <DataGridTextColumn Binding="{Binding Address}" Header="Address"/>
+                <DataGridTextColumn Binding="{Binding PoNo}" Header="PoNo"/>
+                <DataGridTextColumn Binding="{Binding ItemDesc}" Header="ItemDesc"/>
+                <DataGridTextColumn Binding="{Binding Qty}" Header="Qty"/>
+                <DataGridTextColumn Binding="{Binding Rate}" Header="Rate"/>
+                <DataGridTextColumn Binding="{Binding Amount}" Header="Amount"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DatePicker x:Name="FromDate" HorizontalAlignment="Left" Margin="74,78,0,0" VerticalAlignment="Top" Width="155"/>
+        <Label x:Name="label_Copy" Content="From" HorizontalAlignment="Left" Margin="19,76,0,0" VerticalAlignment="Top" Height="26"/>
+        <DatePicker x:Name="ToDate" HorizontalAlignment="Left" Margin="356,79,0,0" VerticalAlignment="Top" Width="155"/>
+        <Label x:Name="label_Copy1" Content="To" HorizontalAlignment="Left" Margin="307,77,0,0" VerticalAlignment="Top" Height="26"/>
+        <Button x:Name="btnItemCount" Content="0" HorizontalAlignment="Right" Margin="0,62,10,0" VerticalAlignment="Top" Width="57" ToolTip="Selected Item Count" RenderTransformOrigin="-11.545,7.65" Height="48" TabIndex="45454" FontWeight="Bold" FontSize="20"/>
+        <Label x:Name="label_Copy2" Content="*" HorizontalAlignment="Left" Margin="53,68,0,0" VerticalAlignment="Top" Height="23" Width="21" FontWeight="Bold" FontSize="16" Foreground="#FFD43030"/>
+        <Label x:Name="label_Copy3" Content="*" HorizontalAlignment="Left" Margin="330,68,0,0" VerticalAlignment="Top" Height="23" Width="21" FontWeight="Bold" FontSize="16" Foreground="#FFD43030"/>
+    </Grid>
+</Window>
